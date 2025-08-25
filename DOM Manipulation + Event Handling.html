@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s ease;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .color-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #redBtn { background-color: #dc3545; }
+        #greenBtn { background-color: #28a745; }
+        #blueBtn { background-color: #007bff; }
+    </style>
+</head>
+<body>
+    <h2>เปลี่ยนสีพื้นหลัง</h2>
+    <button id="redBtn" class="color-button">แดง</button>
+    <button id="greenBtn" class="color-button">เขียว</button>
+    <button id="blueBtn" class="color-button">น้ำเงิน</button>
+
+    <script>
+        const body = document.body;
+        const redBtn = document.getElementById('redBtn');
+        const greenBtn = document.getElementById('greenBtn');
+        const blueBtn = document.getElementById('blueBtn');
+
+        redBtn.addEventListener('click', function() {
+            body.style.backgroundColor = '#dc3545';
+        });
+
+        greenBtn.addEventListener('click', function() {
+            body.style.backgroundColor = '#28a745';
+        });
+
+        blueBtn.addEventListener('click', function() {
+            body.style.backgroundColor = '#007bff';
+        });
+    </script>
+</body>
+</html>

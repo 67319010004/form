@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .menu-item {
+            border: 1px solid #e6b8f1;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.05); /* ขยายรูป 5% */
+        }
+        .menu-item img {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>เมนูอาหาร</h1>
+    <div class="menu-container">
+        <div class="menu-item">
+            <img src="https://s359.thaicdn.net//pagebuilder/efa12ebe-add1-4348-bbae-0adf4f4766c7.jpg" alt="อาหารจานที่ 1">
+            <h3>ผัดผงกะหรี่ปลาหมึก</h3>
+            <h3>ราคา 50 บาท</h3>
+        </div>
+        <div class="menu-item">
+            <img src="https://s359.thaicdn.net//pagebuilder/7d2111b0-1a61-4196-a0fe-f77eb122612f.jpg" alt="อาหารจานที่ 2">
+            <h3> หมูทอดกระเทียม</h3>
+            <h3>ราคา 45 บาท </h3>
+        </div>
+        <div class="menu-item">
+            <img src="https://s359.thaicdn.net//pagebuilder/35fd571d-3d8d-4044-94f1-960fc29ce60c.jpg" alt="อาหารจานที่ 3">
+            <h3>หมูผัดน้ำมันหอย</h3>
+            <h3>ราคา 60 บาท </h3>
+        </div>
+    </div>
+</body>
+</html>

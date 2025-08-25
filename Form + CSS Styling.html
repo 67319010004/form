@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟอร์มสมัครสมาชิก</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            transition: background 0.5s ease;
+        }
+
+        .color-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .color-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .red-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+        }
+
+        .red-btn:hover {
+            background: linear-gradient(45deg, #ff5252, #d32f2f);
+        }
+
+        .green-btn {
+            background: linear-gradient(45deg, #51cf66, #40c057);
+        }
+
+        .green-btn:hover {
+            background: linear-gradient(45deg, #4caf50, #388e3c);
+        }
+
+        .blue-btn {
+            background: linear-gradient(45deg, #339af0, #228be6);
+        }
+
+        .blue-btn:hover {
+            background: linear-gradient(45deg, #2196f3, #1976d2);
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-title {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #5a6fd8, #6a4190);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Background color classes */
+        .bg-red {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%) !important;
+        }
+
+        .bg-green {
+            background: linear-gradient(135deg, #51cf66 0%, #40c057 100%) !important;
+        }
+
+        .bg-blue {
+            background: linear-gradient(135deg, #339af0 0%, #228be6 100%) !important;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 30px 20px;
+                margin: 0 10px;
+            }
+            
+            .color-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ปุ่มเปลี่ยนสีพื้นหลัง -->
+    <div class="color-buttons">
+        <button class="color-btn red-btn" id="redBtn">แดง</button>
+        <button class="color-btn green-btn" id="greenBtn">เขียว</button>
+        <button class="color-btn blue-btn" id="blueBtn">น้ำเงิน</button>
+    </div>
+
+    <!-- ฟอร์มสมัครสมาชิก -->
+    <div class="form-container">
+        <h2 class="form-title">สมัครสมาชิก</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name" class="form-label">ชื่อ</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="กรอกชื่อของคุณ" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">อีเมล</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="กรอกอีเมลของคุณ" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">รหัสผ่าน</label>
+                <input type="password" id="password" name="password" class="form-input" placeholder="กรอกรหัสผ่าน" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">สมัครสมาชิก</button>
+        </form>
+    </div>
+
+    <script>
+        // Event Listeners สำหรับปุ่มเปลี่ยนสีพื้นหลัง
+        document.getElementById('redBtn').addEventListener('click', function() {
+            document.body.className = 'bg-red';
+        });
+
+        document.getElementById('greenBtn').addEventListener('click', function() {
+            document.body.className = 'bg-green';
+        });
+
+        document.getElementById('blueBtn').addEventListener('click', function() {
+            document.body.className = 'bg-blue';
+        });
+
+        // Event Listener สำหรับฟอร์มสมัครสมาชิก
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (name && email && password) {
+                alert('สมัครสมาชิกสำเร็จ!\nชื่อ: ' + name + '\nอีเมล: ' + email);
+                
+                // รีเซ็ตฟอร์ม
+                this.reset();
+            }
+        });
+
+        // เพิ่มเอฟเฟกต์เมื่อพิมพ์ในช่องกรอก
+        const inputs = document.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974837b8e7fc731c',t:'MTc1NjA5NDc5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
